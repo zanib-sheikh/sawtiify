@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    font-family: "Proxima Nova", system-ui, sans-serif;
+  }
+}
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+/* Add this to your index.css or a custom CSS file */
+@keyframes aurora-gradient {
+  0% {
+    background: linear-gradient(45deg, #800080, #000000, #0000ff); /* Purple, Black, Blue */
+  }
+  50% {
+    background: linear-gradient(45deg, #0000ff, #800080, #000000); /* Blue, Purple, Black */
+  }
+  100% {
+    background: linear-gradient(45deg, #800080, #000000, #0000ff); /* Back to initial */
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+.animate-wave {
+  animation: wave 2s infinite ease-in-out;
+  transform-origin:center ;
+}
+
+
+/* Apply the animation to a class */
+.aurora-bg {
+  animation: aurora-gradient 6s ease infinite; /* 6 seconds loop */
+}
+ 
+@keyframes gridAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 120px; /* Moves diagonally */
+  }
+}
+@keyframes micGrow {
+  0% {
+    transform: scale(4.5); /* Start with a larger size */
+  }
+  100% {
+    transform: scale(1); /* Shrink to the original size */
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(-20px); /* Start slightly left */
+  }
+  100% {
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(30px); /* Start slightly right */
+  }
+  100% {
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Apply the animations */
+.animate-micButton {
+  animation: micGrow 0.8s ease-out forwards;
+}
+
+.animate-moveLeft {
+  animation: moveLeft 0.8s ease-out forwards;
+}
+
+.animate-moveRight {
+  animation: moveRight 0.8s ease-out forwards;
+}
